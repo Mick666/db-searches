@@ -22,9 +22,9 @@
         }
 
         function getYesterdaysDate() {
-            let todaysDate = new Date(new Date().setHours(0, 0, 0, 0))
-            let dayBefore = new Date().setDate(todaysDate.getDate() - 1)
-            return new Date(dayBefore).toISOString().slice(0, 10)
+            let date = new Date(new Date().setDate(new Date().getDate() -1))
+            let format = new Intl.DateTimeFormat('ko-KR').format(date).replace(/\. /g, '-')
+            return format.slice(0, format.length-1)
         }
 
     </script>
