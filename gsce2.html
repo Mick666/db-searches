@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
+        rel="stylesheet">
+    <title>DB Searches</title>
+</head>
+
+<body>
+    <div>   
+        <script async src="https://cse.google.com/cse.js?cx=52341c5b88279f74b"></script>
+        <div class="gcse-searchbox"></div>
+        <div class="gcse-searchresults"></div>
+    </div>
+    <script>
+        setTimeout(setDefaultValue, 1000)
+
+        function setDefaultValue() {
+            document.getElementById('gsc-i-id1').value = `after:${getYesterdaysDate()}`
+            document.getElementById('gsc-i-id1').style.background = ''
+        }
+
+        function getYesterdaysDate() {
+            let todaysDate = new Date(new Date().setHours(0, 0, 0, 0))
+            let dayBefore = new Date().setDate(todaysDate.getDate() - 1)
+            return new Date(dayBefore).toISOString().slice(0, 10)
+        }
+
+    </script>
+</body>
