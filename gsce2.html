@@ -22,7 +22,7 @@
         }
 
         function getYesterdaysDate() {
-            let date = new Date(new Date().setDate(new Date().getDate() -1))
+            let date = new Date(new Date().setDate(new Date().getDate() -2))
             let format = new Intl.DateTimeFormat('ko-KR').format(date).replace(/\. /g, '-')
             return format.slice(0, format.length-1)
         }
